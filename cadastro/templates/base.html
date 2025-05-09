@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema Acadêmico{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cadastro/style.css' %}">
+</head>
+<body>
+    <header style="background:#eee; padding:10px;">
+        <h1>Sistema Acadêmico</h1>
+        <nav style="display: flex; gap: 50px;">
+            <div>
+                <strong>Cadastro:</strong><br>
+                <a href="/cadastro/aluno/">Aluno</a> |
+                <a href="/cadastro/professor/">Professor</a> |
+                <a href="/cadastro/disciplina/">Disciplina</a> |
+                <a href="/cadastro/evento/">Evento</a>
+            </div>
+            <div>
+                <strong>Listas de cadastros:</strong><br>
+                <a href="/cadastro/aluno/lista/">Alunos</a> |
+                <a href="/cadastro/professor/lista/">Professores</a> |
+                <a href="/cadastro/disciplina/lista/">Disciplinas</a> |
+                <a href="/cadastro/evento/lista/">Eventos</a>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+            <li style="color: green;">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+

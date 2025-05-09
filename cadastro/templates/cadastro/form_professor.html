@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h2>Cadastro de Professor</h2>
+
+<style>
+    input, select, textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    <div style="border: 1px solid #ccc; padding: 15px; background-color: #fdfdfd; border-radius: 6px; margin-bottom: 10px;">
+        {{ form.as_p }}
+    </div>
+
+    {% if form.errors %}
+        <p style="color: red; font-weight: bold;">Corrija os erros abaixo antes de continuar.</p>
+    {% elif form.is_bound %}
+        <p style="color: green; font-weight: bold;">Formulário pronto para envio!</p>
+    {% endif %}
+
+    <button type="submit" style="padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 4px;">Salvar</button>
+</form>
+
+<h3>Loop For:</h3>
+<ul>
+    {% for letra in "PROFESSOR" %}
+        <li>{{ letra }}</li>
+    {% endfor %}
+</ul>
+
+<p>Número de campos: {{ form.fields|length }}</p>
+{% endblock %}

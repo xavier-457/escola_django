@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Professores Cadastrados</h2>
+<ul>
+  {% for professor in professores %}
+    <li>{{ professor.nome }} - {{ professor.email }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

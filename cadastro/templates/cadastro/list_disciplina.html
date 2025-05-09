@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Disciplinas Cadastradas</h2>
+<ul>
+  {% for disciplina in disciplinas %}
+    <li>{{ disciplina.nome }} - {{ disciplina.codigo }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
