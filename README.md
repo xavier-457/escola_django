@@ -71,8 +71,20 @@ Se não houver um arquivo requirements.txt, você pode criar com:
 **pip freeze > requirements.txt**
 
 ### **4. Rodar o servidor Django**
+
+Ir para a pasta Django (se necessário):
+
+**cd escola_django**
+
+Aplicar as migrações:
    
 **python manage.py migrate**
+
+Criar superusuário:
+
+**python manage.py createsuperuser**
+
+Rodar o servidor:
 
 **python manage.py runserver**
 
@@ -80,15 +92,7 @@ Acesse o sistema pelo navegador:
 
 Interface Admin: http://127.0.0.1:8000/admin
 
-Formulários:
-
 http://127.0.0.1:8000/cadastro/aluno
-
-http://127.0.0.1:8000/cadastro/professor
-
-http://127.0.0.1:8000/cadastro/disciplina
-
-http://127.0.0.1:8000/cadastro/evento
 
 ## **🧪 Como Rodar a API FastAPI**
 ### **1. Navegue até a pasta da API:**
